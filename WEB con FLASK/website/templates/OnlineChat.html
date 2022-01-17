@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block tittle %}Chat Online{% endblock %}
+     
+{% block content %}
+
+<h1 align="center">Chat Online</h1>
+<ul class="list-group list-group-flush" id="chat">
+    {% for mensaje in chat|reverse%}
+    
+    
+    <li class="list-group-item">
+        
+        {{mensaje.data}}
+        {{mensaje.user_id}}
+        
+    </li>
+    
+    {% endfor %}
+</ul>
+<form method="POST">
+    <textarea name="chat" id="chat" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Mensaje</button>
+    </div>
+    
+</form>
+
+{% endblock %}
